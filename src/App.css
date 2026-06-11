@@ -1,13 +1,14 @@
+
 .dailyQuest{
   border : 1px solid ;
-  width : 53%;
+  width : 33%;
   font-family: sans-serif;
   /* background: rgb(236, 238, 68); */
   background: radial-gradient(circle at top left, #e3ee9b 0%, YELLOW 45%, #ebe5d2 100%);
 
-
+  margin : 3%;
   padding : 1%;
-  border-radius: 7%;
+  border-radius: 10%;
 }
 .dailyQuest p{
   font-size: 1.9rem;
@@ -17,6 +18,25 @@
 
 }
 
+.weeklyQuest{
+  margin : 3%;
+  border : 1px solid ;
+  width : 33%;
+  font-family: sans-serif;
+  /* background: rgb(236, 238, 68); */
+  background: radial-gradient(circle at top left, #9bee9f 0%, rgb(67, 242, 93) 45%, #ebe5d2 100%);
+
+
+  padding : 1%;
+  border-radius: 15%;
+}
+.weeklyQuest p{
+  font-size: 1.9rem;
+  font-weight : 750;
+  display : flex;
+  justify-content: center;
+
+}
 
 .todoTemplate {
   display: flex;
