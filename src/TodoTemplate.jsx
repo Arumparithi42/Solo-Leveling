@@ -6,6 +6,7 @@ function TodoTemplate(props){
         setBtn("Completed ✅");
         console.log("Pressed");
         setColor("lightGreen");
+        props.onDone(props.id);
     }
     return(
         <div className = "todoTemplate">

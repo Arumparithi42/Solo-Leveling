@@ -1,18 +1,22 @@
 
 .dailyQuest{
   border : 1px solid ;
-  width : 33%;
+  width : 30%;
   font-family: sans-serif;
   /* background: rgb(236, 238, 68); */
   background: radial-gradient(circle at top left, #e3ee9b 0%, YELLOW 45%, #ebe5d2 100%);
-
+  display : flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap : 14px;
   margin : 3%;
-  padding : 1%;
+  padding-bottom: 1.5%;
   border-radius: 10%;
 }
-.dailyQuest p{
-  font-size: 1.9rem;
-  font-weight : 750;
+h2{
+  font-size: 2.5rem;
+  font-weight : 780;
   display : flex;
   justify-content: center;
 
@@ -24,17 +28,14 @@
   font-family: sans-serif;
   /* background: rgb(236, 238, 68); */
   background: radial-gradient(circle at top left, #ee9bd9 0%, rgb(239, 57, 181) 45%, #ebe5d2 100%);
-
-  margin : 3%;
-  padding : 1%;
-  border-radius: 10%;
-}
-.bonusDailyQuest p{
-  font-size: 1.9rem;
-  font-weight : 750;
   display : flex;
+  flex-direction: column;
   justify-content: center;
-
+  align-items: center;
+  gap : 14px;
+  margin : 3%;
+  padding-bottom: 1.5%;
+  border-radius: 10%;
 }
 
 .weeklyQuest{
@@ -44,17 +45,14 @@
   font-family: sans-serif;
   /* background: rgb(236, 238, 68); */
   background: radial-gradient(circle at top left, #9bee9f 0%, rgb(67, 242, 93) 45%, #ebe5d2 100%);
-
-
-  padding : 1%;
-  border-radius: 15%;
-}
-.weeklyQuest p{
-  font-size: 1.9rem;
-  font-weight : 750;
   display : flex;
+  flex-direction: column;
   justify-content: center;
-
+  align-items: center;
+  gap : 14px;
+  margin : 3%;
+  padding-bottom: 1.5%;
+  border-radius: 10%;
 }
 
 .todoTemplate {
@@ -62,10 +60,10 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  width: min(380px, 100%);
-  margin: 1% auto;
+  /* width: min(380px, 100%); */
+  width : 75%;
   padding: 14px 18px;
-  min-height: 56px;
+ 
   border-radius: 22px;
   background: linear-gradient(135deg, #7dd3fc 0%, #24b1ed 56%, #0ea5e9 100%);
 
