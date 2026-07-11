@@ -1,5 +1,6 @@
 import TodoTemplate from "./TodoTemplate";
 function BonusDailyQuest(){
+    alert("You have Unlocked 'Bonus Daily Quest' by completing Daily Quest");
     return(
         <div className = "bonusDailyQuest">
             <h2>BONUS DAILY QUEST</h2>

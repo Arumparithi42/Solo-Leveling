@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import TodoTemplate from "./TodoTemplate";
-function DailyQuest(){
+function DailyQuest({progress, setProgress}){
 
     const [taskCompleted, setTaskCompleted] = useState(0);
-    const [progress, setProgress] = useState(0);
 
     let msgs = [{msg : "Leet Code", id : 1, done : false},
                 {msg : "DSA Revision", id : 2, done : false},
