@@ -5,6 +5,7 @@ import DailyQuest from "./DailyQuest"
 import BonusDailyQuest from "./BonusDailyQuest";
 import WeeklyQuest from "./WeeklyQuest"
 import Practice from "./Practices";
+import TodoList from "./TodoList";
 function App() {
   const [progress, setProgress] = useState(0);
   return (
@@ -13,6 +14,7 @@ function App() {
    { progress == 100 && <BonusDailyQuest></BonusDailyQuest>}
    {/* <Practice></Practice> */}
     <WeeklyQuest></WeeklyQuest>
+    <TodoList></TodoList>
    </>
   )
 }
