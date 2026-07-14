@@ -1,21 +1,25 @@
 import {useState} from 'react';
+import { useRef } from 'react';
 import Todo from "./Todo";
 function TodoList(){
     const [title,setTitle] = useState("");
     const [description, setDescription] = useState("");
 
     const [todolist,setTodoList] = useState([]);
-    let count = 0;
+    const count = useRef(0);
     function add(){
-        setTodoList([...todolist,{id : count++, title : title, description : description}]);
+        setTodoList([...todolist,{id : count.current, title : title, description : description}]);
+        count.current++;
+        setTitle("");
+        setDescription("");
     }
     return(
-        <>
-        {todolist.map(todo=>{return <Todo title = {title} description = {description}></Todo>})}
-        Title: <input type="text" onChange={(e)=>setTitle(e.target.value)}/>
-        Description : <input type="text" onChange={(e)=>setDescription(e.target.value)}/>
+        <div className='todoListContainer'>
+        {todolist.map(todo=>{return <Todo key = {todo.id} title = {todo.title} description = {todo.description}></Todo>})}
+        Title: <input type="text" value = {title} onChange={(e)=>setTitle(e.target.value)}/>
+        Description : <input type="text" value = {description} onChange={(e)=>setDescription(e.target.value)}/>
         <button onClick={add}>Add</button>
-        </>
+        </div>
     )
 }
 export default TodoList;

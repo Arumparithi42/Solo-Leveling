@@ -99,6 +99,60 @@ h2{
   background-color: #ffffff;
 }
 
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  /* width: min(380px, 100%); */
+  width : 75%;
+  padding: 14px 18px;
+ 
+  border-radius: 22px;
+  background: linear-gradient(135deg, #7dd3fc 0%, #24b1ed 56%, #0ea5e9 100%);
+
+  font-family: Inter, system-ui, sans-serif;
+}
+.todo p {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.todo button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 999px;
+  background-color: rgb(248, 98, 56,0.99);
+  color: #0f172a;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.todo button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.18);
+  background-color: #ffffff;
+}
+
+.todoListContainer{
+  border : 1px solid ;
+  width : 30%;
+  font-family: sans-serif;
+  /* background: rgb(236, 238, 68); */
+  background: radial-gradient(circle at top left, #e3ee9b 0%, YELLOW 45%, #ebe5d2 100%);
+  display : flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap : 14px;
+  margin : 3%;
+  padding-bottom: 1.5%;
+  border-radius: 10%;
+}
+
 /* body {
   margin: 0;
   min-height: 100vh;
