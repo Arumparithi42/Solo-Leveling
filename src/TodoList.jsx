@@ -15,6 +15,7 @@ function TodoList(){
     }
     return(
         <div className='todoListContainer'>
+            <h2>ToDos</h2>
         {todolist.map(todo=>{return <Todo key = {todo.id} title = {todo.title} description = {todo.description}></Todo>})}
         Title: <input type="text" value = {title} onChange={(e)=>setTitle(e.target.value)}/>
         Description : <input type="text" value = {description} onChange={(e)=>setDescription(e.target.value)}/>
