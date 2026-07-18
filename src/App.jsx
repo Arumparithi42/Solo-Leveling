@@ -1,22 +1,29 @@
-import { useState } from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import "./App.css";
-import DailyQuest from "./DailyQuest"
-import BonusDailyQuest from "./BonusDailyQuest";
-import WeeklyQuest from "./WeeklyQuest"
-import Practice from "./Practices";
+import Home from "./Home";
 import TodoList from "./TodoList";
+
 function App() {
-  const [progress, setProgress] = useState(0);
   return (
-   <>
-   <DailyQuest progress = {progress} setProgress = {setProgress} ></DailyQuest>
-   { progress == 100 && <BonusDailyQuest></BonusDailyQuest>}
-   {/* <Practice></Practice> */}
-    <WeeklyQuest></WeeklyQuest>
-    <TodoList></TodoList>
-   </>
-  )
+    <BrowserRouter>
+
+      <nav className="navbar">
+        <h2>My App</h2>
+
+        <div className="nav-links">
+          <Link to="/">Home</Link>
+          <Link to="/todo">Todo</Link>
+        </div>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/todo" element={<TodoList />} />
+      </Routes>
+
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

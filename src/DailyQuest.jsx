@@ -17,7 +17,8 @@ function DailyQuest({progress, setProgress}){
         setTaskCompleted(taskCompleted + 1);
     }
     useEffect(()=>{
-        setProgress(taskCompleted/taskLength*100);
+        if (progress < 100)
+            setProgress(taskCompleted/taskLength*100);
     },[taskCompleted])
     
     

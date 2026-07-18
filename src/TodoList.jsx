@@ -9,6 +9,7 @@ function TodoList(){
     const [todoList,setTodoList] = useState([]);
     const count = useRef(1);
     function add(){
+        if (title.trim() === "") return;
         if (!editId){
             setTodoList([...todoList,{id : count.current, title, description}]);
             count.current++;

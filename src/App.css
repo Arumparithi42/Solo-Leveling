@@ -1,158 +1,436 @@
-h2{
-  font-size: 2.5rem;
-  font-weight : 780;
-  display : flex;
-  justify-content: center;
+/* ===========================
+   GLOBAL
+=========================== */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
+body{
+    font-family:Inter, sans-serif;
+    background:#f5f7fa;
+}
+
+h2{
+    font-size:clamp(1.7rem,4vw,2.5rem);
+    font-weight:780;
+    text-align:center;
+    margin-bottom:15px;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+.navbar{
+    height:70px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 40px;
+    background:#1e293b;
+    color:white;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+.navbar h2{
+    margin:0;
+    color:white;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:600;
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:#38bdf8;
+}
+
+/* ===========================
+   QUEST CARDS
+=========================== */
+.questContainer{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:30px;
+
+    flex-wrap:wrap;
+
+    padding:30px;
+}
+
+.dailyQuest,
+.bonusDailyQuest,
+.weeklyQuest{
+
+    flex:1 1 350px;
+    max-width:450px;
+    min-width:300px;
+
+    margin:30px auto;
+
+    padding:25px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    gap:18px;
+
+    border:1px solid;
+
+    border-radius:22px;
+
+    font-family:sans-serif;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+    transition:.25s;
+}
+
+.dailyQuest:hover,
+.bonusDailyQuest:hover,
+.weeklyQuest:hover{
+
+    transform:translateY(-5px);
+}
+
+/* Keep your colors */
 
 .dailyQuest{
-  border : 1px solid ;
-  width : 30%;
-  font-family: sans-serif;
-  /* background: rgb(236, 238, 68); */
-  background: radial-gradient(circle at top left, #e3ee9b 0%, YELLOW 45%, #ebe5d2 100%);
-  display : flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap : 14px;
-  margin : 3%;
-  padding-bottom: 1.5%;
-  border-radius: 10%;
-}
-.progress{
-  color : red;
-  font-size: larger;
-  font-weight: 600;
+    background:radial-gradient(circle at top left,#e3ee9b 0%,yellow 45%,#ebe5d2 100%);
 }
 
 .bonusDailyQuest{
-  border : 1px solid ;
-  width : 33%;
-  font-family: sans-serif;
-  /* background: rgb(236, 238, 68); */
-  background: radial-gradient(circle at top left, #ee9bd9 0%, rgb(239, 57, 181) 45%, #ebe5d2 100%);
-  display : flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap : 14px;
-  margin : 3%;
-  padding-bottom: 1.5%;
-  border-radius: 10%;
+    background:radial-gradient(circle at top left,#ee9bd9 0%,rgb(239,57,181) 45%,#ebe5d2 100%);
 }
 
 .weeklyQuest{
-  margin : 3%;
-  border : 1px solid ;
-  width : 33%;
-  font-family: sans-serif;
-  /* background: rgb(236, 238, 68); */
-  background: radial-gradient(circle at top left, #9bee9f 0%, rgb(67, 242, 93) 45%, #ebe5d2 100%);
-  display : flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap : 14px;
-  margin : 3%;
-  padding-bottom: 1.5%;
-  border-radius: 10%;
+    background:radial-gradient(circle at top left,#9bee9f 0%,rgb(67,242,93) 45%,#ebe5d2 100%);
 }
 
-.todoTemplate {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  /* width: min(380px, 100%); */
-  width : 75%;
-  padding: 14px 18px;
- 
-  border-radius: 22px;
-  background: linear-gradient(135deg, #7dd3fc 0%, #24b1ed 56%, #0ea5e9 100%);
+/* ===========================
+   PROGRESS
+=========================== */
 
-  font-family: Inter, system-ui, sans-serif;
+.progress{
+    color:red;
+    font-size:1.2rem;
+    font-weight:bold;
 }
 
-.todoTemplate p {
-  margin: 0;
-  font-size: 1.4rem;
-  font-weight: 700;
+/* ===========================
+   TODO TEMPLATE
+=========================== */
+
+.todoTemplate{
+
+    width:100%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:15px;
+
+    padding:16px 20px;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        135deg,
+        #7dd3fc 0%,
+        #24b1ed 56%,
+        #0ea5e9 100%
+    );
+
+    transition:.2s;
+
+    flex-wrap:wrap;
 }
 
-.todoTemplate button {
-  padding: 10px 18px;
-  border: none;
-  border-radius: 999px;
-  background-color: rgb(248, 98, 56,0.99);
-  color: #0f172a;
-  font-size: 0.95rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+.todoTemplate:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
 }
 
-.todoTemplate button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.18);
-  background-color: #ffffff;
+.todoTemplate p{
+
+    flex:1;
+
+    font-size:1.2rem;
+
+    font-weight:700;
+
+    word-break:break-word;
 }
 
-.todo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  /* width: min(380px, 100%); */
-  height:40px;
-  width : 75%;
-  padding: 10px 18px;
- 
-  border-radius: 22px;
-  background: linear-gradient(135deg, #7dd3fc 0%, #24b1ed 56%, #0ea5e9 100%);
+.todoTemplate button{
 
-  font-family: Inter, system-ui, sans-serif;
-}
-.todo p {
-  margin: 0;
-  font-size: 1rem;
-}
+    padding:10px 18px;
 
-.todo button {
-  padding: 10px 18px;
-  border: none;
-  border-radius: 999px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+    border:none;
+
+    border-radius:30px;
+
+    background:rgb(248,98,56);
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    flex-shrink:0;
 }
 
-.todo button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.18);
-  background-color: white !important;
+.todoTemplate button:hover{
+
+    background:white;
+
+    transform:scale(1.05);
 }
+
+/* ===========================
+   TODO CARD
+=========================== */
+
+.todo{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:16px 20px;
+
+    border-radius:16px;
+
+    background:linear-gradient(
+        135deg,
+        #7dd3fc 0%,
+        #38bdf8 45%,
+        #0ea5e9 100%
+    );
+
+    box-shadow:0 6px 15px rgba(0,0,0,.15);
+
+    transition:.2s;
+
+    flex-wrap:wrap;
+}
+
+.todo:hover{
+
+    transform:translateY(-3px);
+}
+
+.todo h4{
+
+    flex:1;
+
+    min-width:120px;
+}
+
+.todo p{
+
+    flex:2;
+
+    min-width:150px;
+
+    word-break:break-word;
+}
+
+.todo button{
+
+    padding:10px 18px;
+
+    border:none;
+
+    border-radius:25px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    flex-shrink:0;
+}
+
+.todo button:hover{
+
+    background:white !important;
+
+    color:#111;
+
+    transform:scale(1.05);
+}
+
+/* ===========================
+   TODO LIST
+=========================== */
 
 .todoListContainer{
-  border : 1px solid ;
-  width : 30%;
-  font-family: sans-serif;
-  /* background: rgb(236, 238, 68); */
-  background: radial-gradient(circle at top left, #e3ee9b 0%, YELLOW 45%, #ebe5d2 100%);
-  display : flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap : 14px;
-  margin : 3%;
-  padding-bottom: 1.5%;
-  border-radius: 10%;
+
+    width:min(500px,95%);
+
+    margin:40px auto;
+
+    padding:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+    border-radius:22px;
+
+    background:linear-gradient(
+        135deg,
+        #f2e35b,
+        #fff176
+    );
+
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
 }
 
-/* body {
-  margin: 0;
-  min-height: 100vh;
-  background: radial-gradient(circle at top left, #dbeafe 0%, #7dd3fc 45%, #0f172a 100%);
-} */
+.todoListContainer h2{
+
+    color:#333;
+}
+
+.todoListContainer label{
+
+    font-weight:bold;
+
+    color:#444;
+}
+
+.todoListContainer input{
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #bbb;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.2s;
+}
+
+.todoListContainer input:focus{
+
+    border-color:#2196f3;
+
+    box-shadow:0 0 5px rgba(33,150,243,.4);
+}
+
+.todoListContainer>button{
+
+    margin-top:10px;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#45a4f2;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.todoListContainer>button:hover{
+
+    background:#1976d2;
+
+    transform:translateY(-2px);
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+    .navbar{
+
+        flex-direction:column;
+
+        height:auto;
+
+        padding:15px;
+
+        gap:10px;
+    }
+
+    .nav-links{
+
+        gap:18px;
+    }
+
+    .dailyQuest,
+    .bonusDailyQuest,
+    .weeklyQuest,
+    .todoListContainer{
+
+        width:95%;
+
+        padding:20px;
+    }
+
+    .todo,
+    .todoTemplate{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+
+    .todo h4,
+    .todo p,
+    .todoTemplate p{
+
+        width:100%;
+    }
+
+    .todo button,
+    .todoTemplate button{
+
+        width:100%;
+    }
+}
